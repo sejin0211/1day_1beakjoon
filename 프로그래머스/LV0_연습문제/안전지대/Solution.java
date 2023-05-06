@@ -3,7 +3,6 @@ class Solution {
         // 전체 칸수에서 위험지역을 빼서 정답 출력
         int dx[] = {-1,-1,0,1,1,1,0,-1};
         int dy[] = {0,1,1,1,0,-1,-1,-1};
-        int x = 0, y = 0, d = 0;
         int n = board.length;
         int answer = n * n;
         int cnt = 0;
