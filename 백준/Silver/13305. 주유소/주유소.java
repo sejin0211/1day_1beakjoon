@@ -14,23 +14,23 @@ public class Main {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 
-        int cost = 0;
+        long cost = 0;
         int N = Integer.parseInt(br.readLine());
-        int[] distance = new int[N - 1];
-        int[] oil = new int[N];
+        long[] distance = new long[N - 1];
+        long[] oil = new long[N];
 
         String inputString = br.readLine();
         StringTokenizer inputStringTokenizer = new StringTokenizer(inputString, " ");
         for (int i = 0; i < N-1; i++) {
-            distance[i] = Integer.parseInt(inputStringTokenizer.nextToken());
+            distance[i] = Long.parseLong((inputStringTokenizer.nextToken()));
         }
         inputString = br.readLine();
         StringTokenizer inputStringTokenizer2 = new StringTokenizer(inputString, " ");
         for (int i = 0; i < N; i++) {
-            oil[i] = Integer.parseInt(inputStringTokenizer2.nextToken());
+            oil[i] = Long.parseLong((inputStringTokenizer2.nextToken()));
         }
 
-        int minOilCost = oil[0];
+        long minOilCost = oil[0];
         for (int i = 0; i < N-1; i++) {
             if (oil[i] < minOilCost) minOilCost = oil[i];
             cost += minOilCost * distance[i];
