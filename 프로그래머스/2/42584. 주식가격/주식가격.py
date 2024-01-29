@@ -1,6 +1,7 @@
 def solution(prices):
     n = len(prices)
-    answer = [0] * n  
+    answer = [0] * n
+    
     stack = []
     
     for i in range(n):
