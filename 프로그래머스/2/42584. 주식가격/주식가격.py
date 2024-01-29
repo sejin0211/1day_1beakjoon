@@ -1,17 +1,16 @@
-def solution(prices):
-    n = len(prices)
-    answer = [0] * n
-    
-    stack = []
-    
-    for i in range(n):
-        while stack and prices[i] < prices[stack[-1]] :
-            j = stack.pop()  
-            answer[j] = i - j 
-        stack.append(i)
+from collections import deque
 
-    while stack:
-        j = stack.pop()
-        answer[j] = n - 1 - j
+def solution(prices):
+    answer = []
+    # 값을 비교해서 떨어질때까지 값을 계산해서 넣기
+    prices = deque(prices)
+    while prices:
+        N=0
+        j=prices.popleft()
+        for price in prices:
+            N+=1
+            if j>price:
+                break
+        answer.append(N)
 
     return answer
