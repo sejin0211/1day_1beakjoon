@@ -9,7 +9,7 @@ def solution(progresses, speeds):
     for i in range(len(progresses)):
         cnt = 0
         remain = 100 - progresses[i]
-        
+        # // 몫int, / 나누기, 소수점, % 나머지
         if remain % speeds[i] == 0:
             cnt = remain // speeds[i]
         else:
@@ -27,5 +27,4 @@ def solution(progresses, speeds):
             max = day
             cnt = 1
     answer.append(cnt)
-    
     return answer
